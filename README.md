@@ -71,6 +71,6 @@ My goal for this project is to 1) learn the basics of circuitPython for microcon
 - Refactored menu module
 - Designed new DrinkBot in Fusion 360
 ## Picture of Model
-![Model of the DrinkBot](DrinkBotModel.jpg)
+![Model of the DrinkBot](DrinkBot/DrinkBotModel.jpg)
 ## Future Versions and Considerations
 While it was nice to shake things up and use different software/hardware combinations, Arduino would have made this project much simpler. Ardiuno has much more libraries to support the devices I used, and it is easier to set up the GPIO pins. If I were to redo this, I would have used a Raspberry Pi zero, or fully converted over to Aruidno. The Raspberry Pi is simply more powerful than what is needed by this project. Also, the peristoltic pumps I used were too slow; it took almost 20 seconds to make a drink. I didn't need the precision given by the pumps, and I would instead opt for a faster, less accurate pump. A friend of mine used aquatic pumps for a project of his, and he didn't notice much of a drop in accuracy. I would opt to use those pumps for faster drink making. Lastly, I heavily considered making this a wifi enabled DrinkBot. However, someone would have to make sure there is a glass inside the machine, and then have to go get the drink after it has been made. The wifi wouldn't add any value to the DrinkBot; it would have been a complete gimmick
