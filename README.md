@@ -17,7 +17,7 @@ Our OLED screen will be using SPI. To enable, type the following into the termin
 ```
 raspi-config
 ```
-Navigate to interfacing options, and select SPI.
+Navigate to interfacing options and select SPI.
 To enable I2C, type the following in the terminal.
 ```
 sudo vim /etc/modules
@@ -30,7 +30,7 @@ i2c-dev
 press esc then zz to exit
 
 ## OLED Display
-The methods the hackershack team used for the display have since depreciated. Adafruit put together a [great tutorial](https://learn.adafruit.com/monochrome-oled-breakouts/overview) on making the OLED work. You simply need to run the command 
+The methods the HackerShack team used for the display have since depreciated. Adafruit put together a [great tutorial](https://learn.adafruit.com/monochrome-oled-breakouts/overview) on making the OLED work. You simply need to run the command 
 ```
 pip install adafruit_ssd1306
 ```
@@ -48,9 +48,11 @@ sudo python main.py
 ```
 
 ## Background
-When I first saw the HackerShack team build this, I thought it would be a fun side project to get out of my comfort zone of C++ and Arduino and get more familiar with python and Raspberry Pi. What I thought was a fun side project turned into an overhaul of the original design. Multiple depenencies had depreciated and ended up not working, so I had to to redesign the code to get everything working. See changes below for a full list of changes.
+When I first saw the HackerShack team build this, I thought it would be a fun side project to get out of my comfort zone of C++ and Arduino and get more familiar with python and Raspberry Pi. What I thought was a fun side project turned into an overhaul of the original design. Multiple dependencies had depreciated and ended up not working, so I had to redesign the code to get everything working. See changes below for a full list of changes.
 ## This Project
-My goal for this project is to 1) learn the basics of circuitPython for microcontrollers, 2) learn the basics of using a Raspberry PI, and 3) grow my skills in using Fusion 360 CAD software. Simply write the drinks you want in the drinks.py file, add the ingedients to the pump configuration file pumps.py, and fire up your Raspberry Pi running main.py to get drinks automatically made for you at the press of a button! Some installation required.
+My goal for this project is to 1) learn the basics of circuitPython for microcontrollers, 2) learn the basics of using a Raspberry PI, and 3) grow my skills in using Fusion 360 CAD software. Simply write the drinks you want in the drinks.py file, add the ingredients to the pump configuration file pumps.py, and fire up your Raspberry Pi running main.py to get drinks automatically made for you at the press of a button! Some installation required.
+## Picture of Model
+![Model of the DrinkBot](/DrinkBotModel.JPG)
 ## Changes
 ### Hardware
 - Added a third button to support previous, next, and select
@@ -70,7 +72,5 @@ My goal for this project is to 1) learn the basics of circuitPython for microcon
 - Added shot menu for shots of ingredients
 - Refactored menu module
 - Designed new DrinkBot in Fusion 360
-## Picture of Model
-![Model of the DrinkBot](/DrinkBotModel.JPG)
 ## Future Versions and Considerations
-While it was nice to shake things up and use different software/hardware combinations, Arduino would have made this project much simpler. Ardiuno has much more libraries to support the devices I used, and it is easier to set up the GPIO pins. If I were to redo this, I would have used a Raspberry Pi zero, or fully converted over to Aruidno. The Raspberry Pi is simply more powerful than what is needed by this project. Also, the peristoltic pumps I used were too slow; it took almost 20 seconds to make a drink. I didn't need the precision given by the pumps, and I would instead opt for a faster, less accurate pump. A friend of mine used aquatic pumps for a project of his, and he didn't notice much of a drop in accuracy. I would opt to use those pumps for faster drink making. Lastly, I heavily considered making this a wifi enabled DrinkBot. However, someone would have to make sure there is a glass inside the machine, and then have to go get the drink after it has been made. The wifi wouldn't add any value to the DrinkBot; it would have been a complete gimmick
+While it was nice to shake things up and use different software/hardware combinations, Arduino would have made this project much simpler. Arduino has much more libraries to support the devices I used, and it is easier to set up the GPIO pins. If I were to redo this, I would have used a Raspberry Pi zero, or fully converted over to Arduino. The Raspberry Pi is simply more powerful than what is needed by this project. Also, the peristaltic pumps I used were too slow; it took almost 20 seconds to make a drink. I didn't need the precision given by the pumps, and I would instead opt for a faster, less accurate pump. A friend of mine used aquatic pumps for a project of his, and he didn't notice much of a drop in accuracy. I would opt to use those pumps for faster drink making. I heavily considered making this a wifi enabled DrinkBot. However, someone would have to make sure there is a glass inside the machine, and then have to go get the drink after it has been made. The wifi wouldn't add any value to the DrinkBot; it would have been a complete gimmick. I also wanted to use 3D printing for some of the parts on the DrinkBot. However, Coronavirus shut down our 3D printer lab, and I was left without access to one. For future versions, I would 3D-print a support for the funnel, braces for the tubing/wiring, a front plate for the display, and brackets for the pumps. I also would include hinges for the side electronics door and the back pump door. The plastic used is too thin for screws, so alternative methods for attaching the hinges would have to be explored.
